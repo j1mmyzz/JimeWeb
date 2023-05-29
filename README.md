@@ -1,1 +1,1 @@
-Meal planner app for TechCodes hackathon.
+Personal Website
