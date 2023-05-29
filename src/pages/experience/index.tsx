@@ -9,7 +9,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import Layout from "@/components/layout";
-
+import Footer from "@/components/footer";
 const Recipes: NextPage = () => {
   return (
     <Layout title="Experience">
@@ -75,6 +75,7 @@ const Recipes: NextPage = () => {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+      <Footer></Footer>
     </Layout>
   );
 };

@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { Text, Flex, Image, Box } from "@chakra-ui/react";
 
 import Layout from "@/components/layout";
+import Footer from "@/components/footer";
 
 const WorkoutPlan: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const WorkoutPlan: NextPage = () => {
           <Image src="Resume - Jimmy Zheng 5_2023 (2)-1.png" />
         </Flex>
       </Box>
+      <Footer></Footer>
     </Layout>
   );
 };

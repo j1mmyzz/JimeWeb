@@ -16,6 +16,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import Footer from "@/components/footer";
 
 const GroceryList: NextPage = () => {
   return (
@@ -100,6 +101,7 @@ const GroceryList: NextPage = () => {
           </WrapItem>
         </Wrap>
       </Flex>
+      <Footer></Footer>
     </Layout>
   );
 };
