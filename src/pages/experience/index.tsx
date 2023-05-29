@@ -16,18 +16,60 @@ const Recipes: NextPage = () => {
       <Text m={8} fontSize="5xl" textAlign="center">
         <strong>Experience</strong>
       </Text>
+
       <Accordion allowToggle>
         <AccordionItem>
           <h2>
             <AccordionButton _expanded={{ bg: "light-grey", color: "black" }}>
               <Box as="span" flex="1" textAlign="left" fontSize={24}>
-                TechCodes - Social Media Manager | 09/2021 - Present | Remote{" "}
+                Brooklyn Technical High School | Brooklyn{" "}
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel fontSize={20}>
             <Box px={10}>
+              <Text fontSize={24} as="u">
+                Student | 09/2020 - Present
+              </Text>
+              <ul>
+                <li>
+                  Took AP CSP & AP CSA,learning computer science principles and
+                  OOP in Java.
+                </li>
+                <li>
+                  Created several Java projects like VegtablesVSMummies, or my
+                  MazeAlgorithmGUI.
+                </li>
+              </ul>
+            </Box>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+
+      <Accordion allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton _expanded={{ bg: "light-grey", color: "black" }}>
+              <Box as="span" flex="1" textAlign="left" fontSize={24}>
+                TechCodes | Brooklyn, NY{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel fontSize={20}>
+            <Box px={10}>
+              <Text fontSize={24} as="u">
+                Social Media Manager | 05/2023 - Present
+              </Text>
+              <ul>
+                <li>
+                  Created instagram posts using Figma and Adobe Illustrator.
+                </li>
+              </ul>
+              <Text fontSize={24} as="u">
+                Member | 09/2021 - Present
+              </Text>
               <ul>
                 <li>
                   Developed NutriFit, a web application designed to help users
@@ -50,13 +92,16 @@ const Recipes: NextPage = () => {
           <h2>
             <AccordionButton _expanded={{ bg: "light-grey", color: "black" }}>
               <Box as="span" flex="1" textAlign="left" fontSize={24}>
-                ETA Media - Intern | 02/2023 - 04/2023 | Remote{" "}
+                ETA Media | Remote{" "}
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel fontSize={20}>
             <Box px={10}>
+              <Text fontSize={24} as="u">
+                Intern | 02/2023 - 04/2023
+              </Text>
               <ul>
                 <li>
                   Created a story-based cybersecurity game using HTML, CSS, and

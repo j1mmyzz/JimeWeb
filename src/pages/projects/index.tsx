@@ -38,10 +38,11 @@ const GroceryList: NextPage = () => {
           maxW={{ base: "100%", sm: "80%" }}
         >
           <WrapItem>
-            <Card maxW="sm">
+            {/* Note all Card images are 720 x 450 */}
+            <Card maxW="sm" mb={10}>
               <CardBody>
                 <Image
-                  src="/Screenshot 2023-05-29 at 1.01.07 AM.png"
+                  src="/maze.png"
                   alt="Green double couch with wooden legs"
                   borderRadius="lg"
                 />
@@ -69,13 +70,9 @@ const GroceryList: NextPage = () => {
             </Card>
           </WrapItem>
           <WrapItem>
-            <Card maxW="sm">
+            <Card maxW="sm" mb={10}>
               <CardBody>
-                <Image
-                  src="/Screenshot 2023-05-29 at 1.00.34 AM.png"
-                  alt="empire game"
-                  borderRadius="lg"
-                />
+                <Image src="/empire.png" alt="empire game" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
                   <Heading size="md">Empire CyberSecurity Game</Heading>
                   <Text>
