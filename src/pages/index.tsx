@@ -6,21 +6,12 @@ import {
   Heading,
   Box,
   Container,
-  Button,
   Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
 import Layout from "@/components/layout";
-
+import Footer from "@/components/footer";
 const Home: NextPage = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Layout title="Home">
@@ -71,6 +62,7 @@ const Home: NextPage = () => {
           </Container>
         </Flex>
       </Layout>
+      <Footer></Footer>
     </>
   );
 };

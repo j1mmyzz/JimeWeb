@@ -47,7 +47,7 @@ const Header: FC = () => {
   return (
     <Box bg="gray.100" px={4}>
       <Flex
-        h={{ base: 28, md: 24 }}
+        h={{ base: 28, md: 20 }}
         px={5}
         alignItems={"center"}
         justifyContent={"space-between"}
@@ -64,7 +64,7 @@ const Header: FC = () => {
           <Image
             src="/walnutCard-removebg-preview.png"
             alt="Logo"
-            w={{ base: 20, md: 14 }}
+            w={{ base: 20, md: 12 }}
           />
         </Link>
         <Flex as="nav" display={{ base: "none", md: "flex" }}>

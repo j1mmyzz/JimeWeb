@@ -1,90 +1,81 @@
-import type { FC, PropsWithChildren } from "react";
 import {
-  Stack,
   Box,
-  IconButton,
-  Image,
-  useDisclosure,
-  Flex,
-  Button,
+  chakra,
+  Container,
+  Stack,
+  Text,
+  useColorModeValue,
+  VisuallyHidden,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { ReactNode } from "react";
 
-const links = [
-  { label: "Projects", path: "/projects" },
-  { label: "Experience", path: "/experience" },
-  { label: "Resume", path: "/resume" },
-];
-
-const PageLink: FC<PropsWithChildren<{ label: string; path: string }>> = ({
+const SocialButton = ({
+  children,
   label,
-  path,
+  href,
+}: {
+  children: ReactNode;
+  label: string;
+  href: string;
 }) => {
-  const router = useRouter();
-
   return (
-    <Box
-      as={Link}
-      px={3}
-      py={{ base: 2, md: 1 }}
-      rounded="xl"
-      fontWeight={router.pathname === path ? "semibold" : "normal"}
-      href={path}
+    <chakra.button
+      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      rounded={"full"}
+      w={8}
+      h={8}
+      cursor={"pointer"}
+      as={"a"}
+      href={href}
+      display={"inline-flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      transition={"background 0.3s ease"}
       _hover={{
-        fontWeight: router.pathname !== path && "bold",
+        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
       }}
     >
-      {label}
-    </Box>
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
   );
 };
 
-const Footer: FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+export default function SmallWithSocial() {
   return (
-    <Box bg="gray.100" px={4}>
-      <Flex
-        h={{ base: 28, md: 24 }}
-        px={5}
-        alignItems={"center"}
-        justifyContent={"space-between"}
+    <Box
+      bg={useColorModeValue("gray.50", "gray.900")}
+      color={useColorModeValue("gray.700", "gray.200")}
+    >
+      <Container
+        as={Stack}
+        maxW={"6xl"}
+        py={4}
+        direction={{ base: "column", md: "row" }}
+        spacing={4}
+        justify={{ base: "center", md: "space-between" }}
+        align={{ base: "center", md: "center" }}
       >
-        <IconButton
-          as={Button}
-          size={"md"}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-        />
-        <Link href="/">
-          <Image
-            src="/logo-no-background.png"
-            alt="Logo"
-            w={{ base: 20, md: 24 }}
-          />
-        </Link>
-        <Flex as="nav" display={{ base: "none", md: "flex" }}>
-          {links.map((link, _) => (
-            <PageLink key={_} {...link} />
-          ))}
-        </Flex>
-        <Flex px={4} />
-      </Flex>
-      {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
-          <Stack as={"nav"} spacing={4}>
-            {links.map((link, _) => (
-              <PageLink key={_} {...link} />
-            ))}
-          </Stack>
-        </Box>
-      ) : null}
+        <Text>© 2022 Chakra Templates. All rights reserved</Text>
+        <Stack direction={"row"} spacing={6}>
+          <SocialButton
+            label={"LinkedIn"}
+            href={"https://www.linkedin.com/in/jimmy-zheng-672a3b265/"}
+          >
+            <FaLinkedin />
+          </SocialButton>
+          <SocialButton label={"Github"} href={"https://github.com/j1mmyzz"}>
+            <FaGithub />
+          </SocialButton>
+          <SocialButton
+            label={"Instagram"}
+            href={"https://www.instagram.com/j1mmy_zz/"}
+          >
+            <FaInstagram />
+          </SocialButton>
+        </Stack>
+      </Container>
     </Box>
   );
-};
-
-export default Footer;
+}

@@ -1,31 +1,9 @@
 import type { NextPage } from "next";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  Text,
-  Flex,
-  Button,
-  Image,
-  useDisclosure,
-  Stack,
-  Card,
-  Box,
-  CardBody,
-  Heading,
-  Checkbox,
-  CheckboxGroup,
-} from "@chakra-ui/react";
+import { Text, Flex, Image, Box } from "@chakra-ui/react";
 
 import Layout from "@/components/layout";
-import { useEffect, useState } from "react";
 
 const WorkoutPlan: NextPage = () => {
-  const [exercises, setExercise] = useState<string[]>(new Array());
-
   return (
     <Layout title="Resume">
       <Text my={8} fontSize="5xl" textAlign="center">
