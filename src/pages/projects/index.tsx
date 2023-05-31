@@ -53,6 +53,9 @@ const GroceryList: NextPage = () => {
                     a maze and finds the optimal path to solve it. You also have
                     the option to create your own maze.
                   </Text>
+                  <Text>
+                    <strong>Technologies: Java Swing</strong>
+                  </Text>
                 </Stack>
               </CardBody>
               <CardFooter>
@@ -76,9 +79,12 @@ const GroceryList: NextPage = () => {
                 <Stack mt="6" spacing="3">
                   <Heading size="md">Empire CyberSecurity Game</Heading>
                   <Text>
-                    A cybersecurity web app game made in HTML, CSS, JS. I made
-                    this as an intern at ETA media. It's designed to simulate
-                    real-life cyber threats and teaches basic cybersecurity.
+                    A cybersecurity web app game that I made as an intern at ETA
+                    media. It's designed to simulate real-life cyber threats and
+                    teaches basic cybersecurity.
+                  </Text>
+                  <Text>
+                    <strong>Technologies: HTML, CSS, JS, jQuery</strong>
                   </Text>
                 </Stack>
               </CardBody>
