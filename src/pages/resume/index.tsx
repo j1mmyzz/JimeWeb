@@ -11,14 +11,14 @@ const WorkoutPlan: NextPage = () => {
         <strong>Resume</strong>
       </Text>
       <Box textAlign="center">
-        <a href="resume.pdf" download>
+        <a href="downloadresume.pdf" download>
           <Button>Download Resume</Button>
         </a>
       </Box>
 
       <Box w="70%" mx="auto">
         <Flex justifyContent="center" alignItems="center" h="100%">
-          <Image src="Resume - Jimmy Zheng 5_2023 (2)-1.png" />
+          <Image src="resume.png" />
         </Flex>
       </Box>
       <Footer></Footer>
