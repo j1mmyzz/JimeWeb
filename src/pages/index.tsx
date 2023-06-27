@@ -60,25 +60,6 @@ const Home: NextPage = () => {
                   watching anime.
                 </Text>
               </Box>
-              <Text my={8} fontSize="5xl" textAlign="center">
-                <strong>Skills</strong>
-              </Text>
-
-              <Center>
-                <Image src="java.png/" alt="Java" boxSize="64px" />
-                <Image src="python.png/" alt="python" boxSize="64px" />
-                <Image src="javascript.png/" alt="JavaScript" boxSize="64px" />
-                <Image src="typescript.png/" alt="Java" boxSize="64px" />
-                <Image src="html.png/" alt="HTML" boxSize="64px" />
-                <Image src="css.png/" alt="CSS" boxSize="64px" />
-              </Center>
-              <Center>
-                <Image src="git.png/" alt="Git" boxSize="64px" />
-              </Center>
-              <Center>
-                <Image src="react.png/" alt="React.js" boxSize="64px" />
-                <Image src="next.png/" alt="Next.js" boxSize="64px" />
-              </Center>
             </Stack>
           </Container>
         </Flex>
