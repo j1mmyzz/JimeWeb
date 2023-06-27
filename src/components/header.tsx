@@ -6,14 +6,17 @@ import {
   Image,
   useDisclosure,
   Flex,
+  useColorMode,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const links = [
   { label: "Projects", path: "/projects" },
+  { label: "Skills", path: "/skills" },
   { label: "Experience", path: "/experience" },
   { label: "Resume", path: "/resume" },
 ];
@@ -43,12 +46,13 @@ const PageLink: FC<PropsWithChildren<{ label: string; path: string }>> = ({
 
 const Header: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg="gray.100" px={4}>
+    // changes color
+    <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
       <Flex
         h={{ base: 28, md: 20 }}
-        px={5}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
@@ -72,8 +76,11 @@ const Header: FC = () => {
             <PageLink key={_} {...link} />
           ))}
         </Flex>
-        <Flex px={4} />
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        </Button>
       </Flex>
+
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4}>

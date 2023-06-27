@@ -15,12 +15,16 @@ const WorkoutPlan: NextPage = () => {
           <Button>Download Resume</Button>
         </a>
       </Box>
-
+      <br />
+      <br />
       <Box w="70%" mx="auto">
         <Flex justifyContent="center" alignItems="center" h="100%">
           <Image src="resume.png" />
         </Flex>
       </Box>
+      <br />
+      <br />
+
       <Footer></Footer>
     </Layout>
   );
