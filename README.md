@@ -2,7 +2,7 @@
 ![j1mmyzz's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=j1mmyzz&theme=vue-dark&show_icons=true&hide_border=true&layout=compact)
 
 ```
-Sub RemoveDailyValues(daysRun)
+Sub RemoveDailyValues(daysRun As Integer)
     Dim ws As Worksheet
     Dim rng As Range
     Dim dailyColumn As Range
@@ -12,9 +12,9 @@ Sub RemoveDailyValues(daysRun)
     
     ' Loop through each worksheet
     For Each ws In ThisWorkbook.Worksheets
-        ' Find the title row containing "Daily"
+        ' Find the title row containing "Daily" starting from row 4
         On Error Resume Next ' Resume next in case "Daily" is not found
-        titleRow = ws.Rows(1).Find("Daily", LookIn:=xlValues, lookat:=xlWhole).Row
+        titleRow = ws.Range("4:4").Find("Daily", LookIn:=xlValues, lookat:=xlWhole).Row
         On Error GoTo 0 ' Turn off error handling
         
         ' If "Daily" is found in the title row
