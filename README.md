@@ -4,47 +4,31 @@
 ```
 Sub RemoveDailyValues(daysRun As Integer)
     Dim ws As Worksheet
-    Dim rng As Range
     Dim dailyColumn As Range
     Dim titleRow As Long
-    Dim removeRows() As Integer
-    Dim i As Integer
+    Dim lastRow As Long
+    Dim startRow As Long
     
     ' Loop through each worksheet
     For Each ws In ThisWorkbook.Worksheets
         ' Find the title row containing "Daily" starting from row 4
         On Error Resume Next ' Resume next in case "Daily" is not found
-        titleRow = ws.Range("4:4").Find("Daily", LookIn:=xlValues, lookat:=xlWhole).Row
+        titleRow = ws.Range("4:4").Find("Daily", LookIn:=xlValues, lookat:=xlWhole).Column
         On Error GoTo 0 ' Turn off error handling
         
         ' If "Daily" is found in the title row
         If titleRow > 0 Then
-            ' Set the range for the entire column containing "Daily"
-            Set dailyColumn = ws.Columns(titleRow)
-            
             ' Determine the starting row and ending row
-            Dim lastRow As Long
             lastRow = ws.Cells(ws.Rows.Count, titleRow).End(xlUp).Row
-            
-            Dim startRow As Long
             startRow = lastRow - daysRun + 1 ' Start from the bottom and move up by daysRun
             
-            ' Loop through each cell in the specified range
-            For Each rng In dailyColumn.Cells(startRow + 1, 1).Resize(daysRun - 1, 1)
-                ' Check if the cell value meets the condition to be removed
-                If rng.Value = "SpecificValueToRemove" Then
-                    ' Record the row index to remove
-                    ReDim Preserve removeRows(1 To i + 1)
-                    removeRows(i + 1) = rng.Row
-                    i = i + 1
-                End If
-            Next rng
-            
-            ' Delete the cell contents from the row under startRow to the bottom but not the bottom
-            If Not IsEmpty(removeRows) Then
-                For i = UBound(removeRows) To LBound(removeRows) Step -1
-                    ws.Rows(removeRows(i) + 1 & ":" & lastRow - 1).ClearContents
-                Next i
+            ' Check if the starting row is valid
+            If startRow > 4 Then
+                ' Set the range for the entire column containing "Daily"
+                Set dailyColumn = ws.Columns(titleRow)
+                
+                ' Delete the cell contents from the row under startRow to the bottom but not the bottom
+                ws.Range(ws.Cells(startRow + 1, titleRow), ws.Cells(lastRow - 1, titleRow)).ClearContents
             End If
         End If
     Next ws
